@@ -11,6 +11,13 @@
   font-size: 17pt;
 }
 
+.accounts{
+  font-size: .7em;
+  line-height: 1em;
+  text-shadow: none;
+  text-align: left;
+}
+
 .welcome{
   padding: 0.2em;
   text-align: center;

@@ -3,12 +3,14 @@
   <div class="welcome">
     <% if current_user %>
       <h3>I knew you were cool <%= session[:user].name %></h3>
+      <div class="accounts">
       <p>The following users have accounts here</p>
       <ol>
       <% @users.each do |each_user| %>
       <li><%= each_user.name %></li>
       <% end %>
       </ol>
+    </div>
     <% else %>
       <h3>Cool users sign up.  You cool?</h3>
     <% end %>
