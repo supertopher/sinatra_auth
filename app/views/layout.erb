@@ -7,19 +7,19 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Cool Users</title>
 </head>
 <body>
 
   <nav>
 
-    <div class="brand"><a href="/">User Authentication</a></div>
+    <div class="brand"><a href="/">Cool User Authentication</a></div>
 
     <ul>
       <% if current_user %>
-        <li><a id="sign-out" href="/sessions/<%= current_user.id %>">Sign Out</a></li>
+        <li><a id="sign-out" href="/logout">Sign Out</a></li>
       <% else %>
-        <li><a href="/sessions/new">Sign In</a></li>
+        <li><a href="/sign_in">Sign In</a></li>
         <li><a href="/users/new">Sign Up</a></li>
       <% end %>
     </ul>
@@ -27,5 +27,7 @@
   </nav>
 
   <%= yield %>
+  <img src="http://localhost:9393/xkcd.jpg" class="title_img">
+
 </body>
 </html>

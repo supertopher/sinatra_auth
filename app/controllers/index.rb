@@ -1,18 +1,34 @@
 get '/' do
-  # render home page
- #TODO: Show all users if user is signed in
+  user = session[:user] if session[:user]
+  @users = User.all
   erb :index
 end
 
+get '/logout' do
+  session.clear
+  redirect '/'
+end
+
+delete '/logout' do
+  session.clear
+  puts "logout"
+  p session[:user]
+end
+
+
 #----------- SESSIONS -----------
 
-get '/sessions/new' do
-  # render sign-in page 
+get '/sign_in' do
+  # render sign-in page
   erb :sign_in
 end
 
-post '/sessions' do
-  # sign-in
+post '/' do
+  session[:user] = User.find_by_email(params[:email]).authenticate(params[:password])
+  if session[:user]
+    p session[:user]
+  end
+  redirect "/"
 end
 
 delete '/sessions/:id' do
@@ -27,5 +43,7 @@ get '/users/new' do
 end
 
 post '/users' do
-  # sign-up a new user
+  this_user = User.create(params[:user])
+  session[:id] = this_user.id
+  redirect '/'
 end

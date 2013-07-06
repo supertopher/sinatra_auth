@@ -2,20 +2,39 @@
   margin: 20px auto;
   width: 800px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  -webkit-box-shadow: 8px 8px 17px rgba(107, 7, 50, 0.75);
+  -moz-box-shadow:    8px 8px 17px rgba(107, 7, 50, 0.75);
+  box-shadow:         8px 8px 17px rgba(107, 7, 50, 0.75);
 }
 
 .container h1 {
   font-size: 17pt;
+}
 
+.welcome{
+  padding: 0.2em;
+  text-align: center;
+  text-shadow: 4px 5px 5px rgba(150, 150, 150, 0.77);
+  font-size: 2em;
+}
+
+.title_img{
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:10em;
 }
 
 nav {
+  display: inline;
   width: 100%;
   height: 40px;
   font-weight: bold;
 }
 
+.brand{
+  text-shadow: 2px 2px 2px rgba(107, 7, 50, 0.56);
+}
 nav .brand, nav .brand a {
   margin-left: 25px;
   font-size: 18pt;

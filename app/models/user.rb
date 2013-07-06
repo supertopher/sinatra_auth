@@ -1,16 +1,11 @@
 class User < ActiveRecord::Base
   include BCrypt
+  has_secure_password
+  validates :password,  length: { minimum: 6 }
+  validates :password,  presence:   true
+  validates :email,     uniqueness: true
+  validates :name,      presence:   true
 
 
-
-
-  def password
-    @password ||= Password.new(password_hash)
-  end
-
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_hash = @password
-  end
 
 end
